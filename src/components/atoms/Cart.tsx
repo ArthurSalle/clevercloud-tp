@@ -1,4 +1,4 @@
-import cart from '../../styles/components/cart.css';
+import cart from '../../assets/shopping-cart.png';
 
 const Cart = () => {
   return (
