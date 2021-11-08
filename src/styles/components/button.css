@@ -1,0 +1,20 @@
+.base {
+  padding-block: 4px;
+  padding-inline: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.primary {
+  border: solid 1px #4361ee;
+  background-color: #fff;
+  color: #4361ee;
+}
+
+.secondary {
+  border: solid 1px red;
+  background-color: #fff;
+  color: red;
+}
