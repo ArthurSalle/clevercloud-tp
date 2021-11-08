@@ -1,16 +1,33 @@
-.panel {
+.variant-panel {
   background-color: var(--color-white);
   margin-right: 40px;
   padding: 18px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  overflow-y: scroll;
 }
 
-.panel-content {
+.variant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 8px;
+  padding-inline: 8px;
+}
+/* 
+.variant:nth-child(odd) {
+  background-color: rgb(226, 222, 222);
+} */
+
+.variant-content {
   display: flex;
   align-items: center;
 }
 
-.panel-img img {
+.variant-content-img {
   width: 30px;
+}
+
+.variant-content-text {
+  margin-left: 8px;
 }

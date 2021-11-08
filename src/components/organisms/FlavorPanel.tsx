@@ -10,12 +10,12 @@ const FlavorPanel = ({ instances, variantName }: FlavorPanelProps) => {
   const flavorName = instances.find((el: any) => el.name === variantName);
 
   return (
-    <div className="flavors">
-      <h2>Choose a flavor</h2>
-      <p>{variantName}</p>
+    <div className="flavor-panel">
+      <h2>{`Choose a ${variantName}'s flavor`}</h2>
+      {/* <p>{variantName}</p> */}
       {flavorName &&
         flavorName.flavors.map((el: any) => (
-          <div className="flavors-content" key={el.name}>
+          <div className="flavor-content" key={el.name}>
             <div>
               <p className="flavor">Name : {el.name}</p>
             </div>

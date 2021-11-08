@@ -10,15 +10,15 @@ type InstancesProps = {
 
 const VariantPanel = ({ instances, setVariantName }: InstancesProps) => {
   return (
-    <div className="panel">
+    <div className="variant-panel">
       <h2>Choose a variant</h2>
 
       {instances.map((el) => (
-        <div key={el.variant.id} className="panel-content">
-          <div className="panel-img">
-            <img src={el.variant.logo} alt="logo" />
+        <div key={el.variant.id} className="variant">
+          <div className="variant-content">
+            <img className="variant-content-img" src={el.variant.logo} alt="logo" />
+            <p className="variant-content-text">{el.variant.name}</p>
           </div>
-          <p>{el.variant.name}</p>
           <Button
             variant="primary"
             onClick={() => {
