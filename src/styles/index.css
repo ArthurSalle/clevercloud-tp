@@ -1,0 +1,5 @@
+@import './main.css';
+@import './reset.css';
+
+@import './components/cart.css';
+@import './components/header.css';
