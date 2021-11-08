@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Instances } from '../../types/ApiResponses';
+import VariantPanel from '../components/organisms/VariantPanel';
+import { Instances } from '../types/ApiResponses';
 
 const Dashboard = () => {
   const [instances, setInstances] = useState<Instances[]>([]);
@@ -13,9 +14,11 @@ const Dashboard = () => {
       .then((instances) => setInstances(instances));
   }, [setInstances]);
 
-  console.log(instances);
-
-  return <div></div>;
+  return (
+    <div>
+      <VariantPanel instances={instances} />
+    </div>
+  );
 };
 
 export default Dashboard;
