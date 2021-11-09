@@ -1,8 +1,21 @@
 .cart-panel {
-  background-color: #fff;
-  margin-right: 40px;
-  padding: 18px;
+  grid-area: 1 / 3 / 2 / 4;
+  background-color: var(--color-white);
+  padding: 8px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   overflow-y: scroll;
+}
+
+.cart-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.cart-title {
+  font-size: 24px;
+  font-weight: 600;
 }

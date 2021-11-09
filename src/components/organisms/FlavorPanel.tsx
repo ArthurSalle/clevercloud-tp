@@ -15,20 +15,22 @@ const FlavorPanel = ({ instances, variantName, setCart }: FlavorPanelProps) => {
 
   return (
     <div className="flavor-panel">
-      <h2>{`Choose a ${variantName}'s flavor`}</h2>
+      <h2 className="flavor-title">Choose a flavor</h2>
+
+      {flavorName && (
+        <div className="flavor-selected">
+          <img src={flavorName?.variant.logo} alt="variant" />
+          <h3>{variantName}</h3>
+        </div>
+      )}
+
       {flavorName &&
         flavorName.flavors.map((el, k) => (
           <div className="flavor-content" key={el.name}>
             <div>
-              <p className="flavor">Name : {el.name}</p>
-            </div>
-            <div>
-              <p className="flavor">Mem : {el.mem}</p>
-            </div>
-            <div>
+              <h3 className="flavor">{el.name}</h3>
+              <p className="flavor">Mem : {el.mem} GO</p>
               <p className="flavor">CPUs : {el.cpus}</p>
-            </div>
-            <div>
               <p className="flavor">GPUs : {el.gpus}</p>
             </div>
             <div>

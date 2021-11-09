@@ -27,7 +27,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <VariantPanel instances={instances} setVariantName={setVariantName} />
       <FlavorPanel instances={instances} variantName={variantName} setCart={setCart} />
-      <CartPanel cart={cart} />
+      <CartPanel cart={cart} variantName={variantName} setCart={setCart} />
     </div>
   );
 };

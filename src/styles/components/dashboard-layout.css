@@ -1,5 +1,12 @@
 .dashboard {
-  display: flex;
   height: calc(100vh - 90px);
   padding-block: 40px;
+  padding-inline: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 24px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }

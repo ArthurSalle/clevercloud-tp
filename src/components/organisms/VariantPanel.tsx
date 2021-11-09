@@ -11,7 +11,7 @@ type InstancesProps = {
 const VariantPanel = ({ instances, setVariantName }: InstancesProps) => {
   return (
     <div className="variant-panel">
-      <h2>Choose a variant</h2>
+      <h2 className="variant-title">Choose a variant</h2>
 
       {instances.map((el) => (
         <div key={el.variant.id} className="variant">
