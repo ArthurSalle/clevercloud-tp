@@ -1,7 +1,12 @@
+import { Cart as CartType } from '../../App';
 import logo from '../../assets/logo.png';
-import Cart from '../atoms/Cart';
+import Cart from '../molecules/Cart';
 
-const Header = () => {
+type HeaderProps = {
+  cart: CartType[];
+};
+
+const Header = ({ cart }: HeaderProps) => {
   return (
     <header className="header">
       <div className="header-img">
@@ -9,8 +14,9 @@ const Header = () => {
           <img src={logo} alt="logo" />
         </a>
       </div>
+
       <div className="header-cart">
-        <Cart />
+        <Cart cart={cart} />
       </div>
     </header>
   );

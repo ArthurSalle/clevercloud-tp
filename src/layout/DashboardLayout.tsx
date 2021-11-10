@@ -1,27 +1,19 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
+import { Cart } from '../App';
 import CartPanel from '../components/organisms/CartPanel';
 import FlavorPanel from '../components/organisms/FlavorPanel';
 import VariantPanel from '../components/organisms/VariantPanel';
-import { Flavor, Instances } from '../types/ApiResponses';
+import { Instances } from '../types/ApiResponses';
 
-export type Cart = {
-  lang: string;
-  items: Flavor[];
+type DashboardProps = {
+  instances: Instances[];
+  cart: Cart[];
+  setCart: Dispatch<SetStateAction<Cart[]>>;
 };
 
-const Dashboard = () => {
-  const [instances, setInstances] = useState<Instances[]>([]);
+const Dashboard = ({ instances, cart, setCart }: DashboardProps) => {
   const [variantName, setVariantName] = useState('');
-  const [cart, setCart] = useState<Cart[]>([]);
-
-  useEffect(() => {
-    fetch('https://api.clever-cloud.com/v2/products/instances')
-      .then((res) => {
-        return res.json();
-      })
-      .then((instances) => setInstances(instances));
-  }, [setInstances]);
 
   return (
     <div className="dashboard">

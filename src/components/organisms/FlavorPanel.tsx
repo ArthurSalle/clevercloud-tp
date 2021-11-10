@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { Cart } from '../../layout/DashboardLayout';
+import { Cart } from '../../App';
 import { Instances } from '../../types/ApiResponses';
 import Button from '../atoms/Button';
 
@@ -29,7 +29,7 @@ const FlavorPanel = ({ instances, variantName, setCart }: FlavorPanelProps) => {
           <div className="flavor-content" key={el.name}>
             <div>
               <h3 className="flavor">{el.name}</h3>
-              <p className="flavor">Mem : {el.mem} GO</p>
+              <p className="flavor">Mem : {el.mem} Go</p>
               <p className="flavor">CPUs : {el.cpus}</p>
               <p className="flavor">GPUs : {el.gpus}</p>
             </div>
@@ -40,23 +40,21 @@ const FlavorPanel = ({ instances, variantName, setCart }: FlavorPanelProps) => {
                   setCart((prevState) => {
                     const newFlavor = flavorName.flavors[k];
 
-                    const isCartFlavor = prevState.some(
+                    const isCartFlavor = prevState.find(
                       (prev) => prev.lang === variantName,
                     );
 
                     if (isCartFlavor) {
                       return prevState.map((cart) => {
-                        const cloneCart = { ...cart };
-
-                        if (cloneCart.lang === variantName) {
-                          cloneCart.items = cloneCart.items.find(
+                        if (cart.lang === isCartFlavor.lang) {
+                          cart.items = cart.items.find(
                             (selectedFlavor) => selectedFlavor.name === newFlavor.name,
                           )
-                            ? [...cloneCart.items]
-                            : [...cloneCart.items, newFlavor];
+                            ? [...cart.items]
+                            : [...cart.items, newFlavor];
                         }
 
-                        return cloneCart;
+                        return cart;
                       });
                     }
 
