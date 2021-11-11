@@ -4,9 +4,11 @@ import Header from './components/organisms/Header';
 import DashboardLayout from './layout/DashboardLayout';
 import { Flavor, Instances } from './types/ApiResponses';
 
+export type FlavorInTheCart = Flavor & { quantity: number };
+
 export type Cart = {
   lang: string;
-  items: Flavor[];
+  items: FlavorInTheCart[];
 };
 
 function App() {
@@ -18,7 +20,19 @@ function App() {
       .then((res) => {
         return res.json();
       })
-      .then((instances) => setInstances(instances));
+      .then((instances: Instances[]) =>
+        setInstances(
+          instances.map((instance) => {
+            instance.flavors.map((el) => {
+              el.price = el.price * 40;
+
+              return el;
+            });
+
+            return instance;
+          }),
+        ),
+      );
   }, [setInstances]);
 
   return (
